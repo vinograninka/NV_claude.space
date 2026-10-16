@@ -1,0 +1,10 @@
+# Системное и рабочее
+.DS_Store
+.claude/
+
+# Черновики и демо — в репозиторий не входят
+design-options.html
+award-demos.html
+vaal-demo/
+deploy/
+*.zip

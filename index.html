@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Персональная настройка Claude — можно начать с нуля</title>
+  <meta name="description" content="Вы рассказываете, что хотите упростить, — я настраиваю Claude под вашу работу: от создания аккаунта до проектов, инструкций и подборки промптов. Без технической подготовки.">
+  <meta name="theme-color" content="#121A2B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Расскажите о работе. Claude соберу под неё я.">
+  <meta property="og:description" content="Персональная настройка Claude для специалистов и малого бизнеса. Можно прийти без аккаунта и подготовки.">
+  <link rel="canonical" href="https://nvclaude.space/">
+  <meta property="og:url" content="https://nvclaude.space/">
+  <meta property="og:image" content="https://nvclaude.space/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Onest:wght@400;500;600;700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body data-accent="coral">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <div class="curtain" aria-hidden="true">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 0h1440v96c-180 50-330 64-520 22S520 40 330 82 80 140 0 110z"/></svg>
+  </div>
+
+  <header class="header" data-header>
+    <div class="header__inner">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M16 2c1.4 6.6 4.4 9.6 14 14-9.6 4.4-12.6 7.4-14 14-1.4-6.6-4.4-9.6-14-14 9.6-4.4 12.6-7.4 14-14z"/></svg>
+        </span>
+        <span class="brand__name" data-brand-name>NV</span>
+        <span class="brand__tag" data-brand-tag>Claude</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#products">Услуги</a></li>
+          <li><a href="#process">Как это работает</a></li>
+          <li><a href="#examples">Задачи</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--small btn--ink header__cta" href="#contact" data-cta>Обсудить задачу</a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" data-burger>
+        <span class="burger__lines" aria-hidden="true"></span>
+        <span class="sr-only">Меню</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+    <nav aria-label="Мобильная навигация">
+      <ul>
+        <li><a href="#products">Услуги</a></li>
+        <li><a href="#process">Как это работает</a></li>
+        <li><a href="#examples">Задачи</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+      </ul>
+      <a class="btn btn--accent" href="#contact" data-cta>Обсудить задачу</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section class="hero" id="top" data-hero>
+      <canvas class="sky" data-sky="sparse" aria-hidden="true"></canvas>
+      <div class="hero__grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--pill"><span class="dot" aria-hidden="true"></span>Можно начать без аккаунта и подготовки</p>
+          <h1 class="hero__title">
+            <span class="line"><span>Расскажите</span></span>
+            <span class="line"><span>о работе.</span></span>
+            <span class="line line--accent"><span>Claude соберу</span></span>
+            <span class="line line--accent"><span>под неё я.</span></span>
+          </h1>
+          <p class="hero__lead">Без документации, терминов и экспериментов в одиночку. Создание аккаунта, настройку и понятную инструкцию беру на себя — вам остаётся пользоваться.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--accent btn--big" href="#contact" data-cta>Обсудить задачу</a>
+            <a class="link-arrow" href="#process">Как это работает</a>
+          </div>
+
+          <div class="switch" data-switch>
+            <p class="switch__label" id="switch-label">Что хочется упростить?</p>
+            <div class="switch__chips" role="tablist" aria-labelledby="switch-label" data-chips></div>
+          </div>
+        </div>
+
+        <div class="hero__scene" aria-live="polite" data-scene>
+          <div class="blob blob--a" data-blob-a aria-hidden="true"></div>
+          <div class="blob blob--b" data-blob-b aria-hidden="true"></div>
+          <div class="hero__word" aria-hidden="true" data-words></div>
+          <div class="orbit" aria-hidden="true">
+            <span class="orbit__shape orbit__shape--ring"></span>
+            <span class="orbit__shape orbit__shape--squiggle"><svg viewBox="0 0 60 20"><path d="M2 10c7-9 12-9 19 0s12 9 19 0 12-9 18 0"/></svg></span>
+            <span class="orbit__shape orbit__shape--spark"><svg viewBox="0 0 32 32"><path d="M16 2c1.4 6.6 4.4 9.6 14 14-9.6 4.4-12.6 7.4-14 14-1.4-6.6-4.4-9.6-14-14 9.6-4.4 12.6-7.4 14-14z"/></svg></span>
+          </div>
+          <div class="stack-wrap" data-stack-wrap></div>
+          <p class="scene-note">Иллюстрация: так может выглядеть настроенный проект</p>
+        </div>
+      </div>
+
+      <div class="hero__pager" aria-hidden="true">
+        <span class="hero__progress"><span data-progress></span></span>
+        <span class="hero__count" data-count>01 / 04</span>
+      </div>
+
+      <svg class="wave wave--bottom" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c160-46 320-58 520-14s360 66 560 20 280-40 360-22v76H0z"/></svg>
+    </section>
+
+    <!-- 2. ЧТО МЕНЯЕТСЯ -->
+    <section class="change" id="change" aria-labelledby="change-title" data-change>
+      <div class="container change__inner">
+        <div class="change__copy" data-reveal>
+          <p class="eyebrow">До и после настройки</p>
+          <h2 id="change-title" class="h2">Из «с чего начать?» — в&nbsp;<em>рабочее пространство</em> под ваши задачи</h2>
+          <p class="lead">Пока Claude не настроен, это пустое окно, которому каждый раз нужно всё объяснять. После — место, где уже лежит контекст вашей работы.</p>
+          <div class="change__example">
+            <span class="change__example-label">На примере:</span>
+            <div class="mini-chips" data-mini-chips></div>
+          </div>
+        </div>
+
+        <div class="change__stage" data-change-stage>
+          <div class="change__notes" data-notes aria-hidden="true"></div>
+          <div class="after-card" data-after-card>
+            <p class="after-card__label"><span class="dot" aria-hidden="true"></span>После настройки</p>
+            <ul class="after-card__list" data-after-list></ul>
+          </div>
+          <ul class="sr-only" aria-label="Что обычно мешает до настройки" data-before-sr></ul>
+        </div>
+      </div>
+      <p class="container fine-print" data-reveal>Claude по-прежнему может ошибаться — важное проверяете вы. Зато вы знаете, как с ним работать и что ему можно доверить.</p>
+    </section>
+
+    <!-- 3. КОРОТКО (стопка слов) -->
+    <section class="words" aria-label="Коротко о подходе">
+      <svg class="wave wave--top" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50c180 40 360 60 560 20s360-60 560-30 240 40 320 30V0H0z"/></svg>
+      <canvas class="sky sky--deep" data-sky="deep" aria-hidden="true"></canvas>
+      <svg class="constellation" aria-hidden="true" data-constellation></svg>
+      <div class="container">
+        <p class="eyebrow eyebrow--light">Коротко</p>
+        <span class="shooting" aria-hidden="true" data-shooting></span>
+        <ol class="words__list" data-words-list>
+          <li data-color="coral"><span>Вы рассказываете.</span><i class="cstar" aria-hidden="true"></i></li>
+          <li data-color="violet"><span>Я разбираюсь.</span><i class="cstar" aria-hidden="true"></i></li>
+          <li data-color="mint"><span>Claude настроен.</span><i class="cstar" aria-hidden="true"></i></li>
+          <li data-color="sun"><span><em>Вы пользуетесь.</em></span><i class="cstar" aria-hidden="true"></i></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. КАК ЭТО РАБОТАЕТ -->
+    <section class="process" id="process" aria-labelledby="process-title" data-process>
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow eyebrow--light">Как это работает</p>
+          <h2 id="process-title" class="h2">Три шага — и&nbsp;<em>никакого домашнего задания</em></h2>
+        </div>
+
+        <div class="route" data-route>
+          <svg class="route__svg" aria-hidden="true" data-route-svg>
+            <path class="route__track" data-route-track></path>
+            <path class="route__line" data-route-line></path>
+          </svg>
+          <span class="route__spark" aria-hidden="true" data-route-spark>
+            <svg viewBox="0 0 32 32"><path d="M16 2c1.4 6.6 4.4 9.6 14 14-9.6 4.4-12.6 7.4-14 14-1.4-6.6-4.4-9.6-14-14 9.6-4.4 12.6-7.4 14-14z"/></svg>
+          </span>
+          <ol class="route__steps" data-steps></ol>
+        </div>
+
+        <div class="process__note" data-reveal>
+          <p><strong>Приходить с аккаунтом или готовыми настройками не нужно</strong> — можно начать полностью с нуля. Сервер, API и множество подключений нужны не каждой задаче: объём подбирается под вас. Пароли, коды подтверждения и данные карты вы вводите сами в интерфейсе сервиса — пересылать их мне не нужно.</p>
+        </div>
+
+        <details class="hood" data-reveal>
+          <summary><span>Что под капотом</span><span class="hood__icon" aria-hidden="true"></span></summary>
+          <div class="hood__body">
+            <p>Для тех, кому интересно. Разбираться в этом не обязательно.</p>
+            <ul data-hood></ul>
+          </div>
+        </details>
+      </div>
+      <svg class="wave wave--bottom wave--paper" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70c200-50 380-40 560 0s380 40 560 0 240-30 320-20v70H0z"/></svg>
+    </section>
+
+    <!-- 5. ПРОДУКТЫ -->
+    <section class="products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow">Форматы работы</p>
+            <h2 id="products-title" class="h2">Начните с основного. <em>Остальное — когда понадобится</em></h2>
+          </div>
+          <p class="lead">Сервер, API и отдельные помощники нужны не всем. Сначала разбираемся в задаче, потом выбираем формат.</p>
+        </div>
+        <div class="products__grid" data-products></div>
+      </div>
+    </section>
+
+    <!-- 6. ПРИМЕРЫ / КЕЙСЫ -->
+    <section class="examples" id="examples" aria-labelledby="examples-title">
+      <div class="container">
+        <div class="examples__head">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow" data-examples-eyebrow>Примеры того, что можно настроить</p>
+            <h2 id="examples-title" class="h2" data-examples-title>С какими задачами <em>приходят</em></h2>
+            <p class="lead" data-examples-lead>Направления, с которыми можно прийти. Это не истории клиентов и не обещание результата: состав настройки подбирается под вашу задачу.</p>
+          </div>
+          <div class="orbitals" data-orbitals data-reveal aria-hidden="true">
+            <svg class="orbitals__svg" viewBox="0 95 400 215" data-orbitals-svg></svg>
+            <p class="orbitals__count"><span data-orbitals-num>8</span> <span data-orbitals-word>направлений</span></p>
+          </div>
+        </div>
+        <div class="filter" role="group" aria-label="Фильтр по типу задач" data-filter><span class="filter__pill" aria-hidden="true" data-filter-pill></span></div>
+        <ul class="examples__grid" data-examples></ul>
+      </div>
+    </section>
+
+    <!-- 7. ЭТОТ САЙТ — ПРИМЕР ПОДХОДА -->
+    <section class="meta" aria-labelledby="meta-title">
+      <svg class="wave wave--top wave--meta" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c220 50 420 70 620 30s400-60 560-30 200 30 260 24V0H0z"/></svg>
+      <canvas class="sky" data-sky="sparse" aria-hidden="true"></canvas>
+      <div class="container meta__inner">
+        <div class="meta__copy" data-reveal>
+          <p class="eyebrow">Этот сайт — тоже пример подхода</p>
+          <h2 id="meta-title" class="h2">Сложное разложено по&nbsp;смыслу. <em>Так же можно и&nbsp;с&nbsp;вашей работой</em></h2>
+          <p class="lead">Этот сайт тоже сделан с помощью Claude — от структуры и текстов до анимации и звёздного неба. Вместе со мной вы сможете собрать свой: сайт, лендинг или рабочий инструмент — и сделать его ещё интереснее.</p>
+        </div>
+        <ul class="meta__tiles">
+          <li class="tile" data-reveal>
+            <span class="tile__num">01</span>
+            <h3>Выбор меняет объяснение</h3>
+            <p>Переключатель наверху показывает разные задачи — и пример ниже подстраивается под ваш выбор.</p>
+            <button class="tile__btn" type="button" data-point="[data-switch]">Показать на странице</button>
+          </li>
+          <li class="tile" data-reveal>
+            <span class="tile__num">02</span>
+            <h3>Маршрут вместо инструкции</h3>
+            <p>Процесс — три шага по одной линии, а технические детали спрятаны во второй уровень.</p>
+            <button class="tile__btn" type="button" data-point="[data-route]">Показать на странице</button>
+          </li>
+          <li class="tile" data-reveal>
+            <span class="tile__num">03</span>
+            <h3>Следующий шаг всегда рядом</h3>
+            <p>Кнопка разговора есть в шапке и в каждом формате — не нужно искать, куда нажать.</p>
+            <button class="tile__btn" type="button" data-point=".header__cta, .burger">Показать на странице</button>
+          </li>
+          <li class="tile" data-reveal>
+            <span class="tile__num">04</span>
+            <h3>Честные границы на виду</h3>
+            <p>Что берёт на себя специалист и что остаётся за вами — не мелким шрифтом, а отдельным блоком.</p>
+            <button class="tile__btn" type="button" data-point="#trust">Показать на странице</button>
+          </li>
+        </ul>
+      </div>
+      <svg class="wave wave--bottom wave--paper" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80c240-60 460-60 680-10s420 40 560 0 160-30 200-26v76H0z"/></svg>
+    </section>
+
+    <!-- 8. ДОВЕРИЕ И ГРАНИЦЫ -->
+    <section class="trust" id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Доверие и границы</p>
+          <h2 id="trust-title" class="h2">Что беру на себя — и&nbsp;<em>что остаётся за&nbsp;вами</em></h2>
+        </div>
+        <div class="trust__cols">
+          <div class="trust__col trust__col--me" data-reveal>
+            <h3>Беру на себя</h3>
+            <ul>
+              <li>Старт с нуля и создание аккаунта Claude</li>
+              <li>Помощь с выбором подходящего тарифа</li>
+              <li>Всю техническую настройку под вашу работу</li>
+              <li>Проверку на ваших характерных примерах</li>
+              <li>Понятную инструкцию и подборку промптов</li>
+            </ul>
+          </div>
+          <div class="trust__col trust__col--you" data-reveal>
+            <h3>Остаётся за вами</h3>
+            <ul>
+              <li>Коды подтверждения, пароли и оплата — вы вводите их сами в интерфейсе сервиса</li>
+              <li>Решение, какие данные доверять Claude</li>
+              <li>Проверка важных ответов: Claude может ошибаться</li>
+              <li>Окончательные решения в вашей работе</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq" id="faq">
+          <h3 class="faq__title" data-reveal>Частые вопросы</h3>
+          <div class="faq__list" data-faq></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ФИНАЛЬНЫЙ CTA -->
+    <section class="final" id="contact" aria-labelledby="final-title">
+      <svg class="wave wave--top wave--final" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c220 50 420 70 620 30s400-60 560-30 200 30 260 24V0H0z"/></svg>
+      <canvas class="sky" data-sky="sparse" aria-hidden="true"></canvas>
+      <div class="final__blob" aria-hidden="true"></div>
+      <div class="container final__inner" data-reveal>
+        <p class="eyebrow">Первый шаг</p>
+        <h2 id="final-title" class="final__title">Расскажите, что хочется <em>упростить</em></h2>
+        <p class="lead">Первый разговор — чтобы понять задачу и подобрать формат. Без обязательств и спешки. Аккаунт и подготовка не нужны.</p>
+        <div class="final__actions" data-contact-actions></div>
+        <div class="owner-note" hidden data-owner-note>
+          <strong>Заметка для владельца (видна только в превью).</strong>
+          Контакт ещё не указан. Заполните <code>contact</code> в файле <code>src/config/site.js</code> — кнопки на всём сайте начнут вести туда.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 2c1.4 6.6 4.4 9.6 14 14-9.6 4.4-12.6 7.4-14 14-1.4-6.6-4.4-9.6-14-14 9.6-4.4 12.6-7.4 14-14z"/></svg></span>
+        <span class="brand__name" data-brand-name>NV</span>
+        <span class="brand__tag" data-brand-tag>Claude</span>
+      </a>
+      <p class="footer__note">Независимый специалист по настройке Claude. Не являюсь сотрудником или представителем Anthropic; Claude — продукт компании Anthropic.</p>
+      <p class="footer__copy">© <span data-year>2026</span></p>
+    </div>
+  </footer>
+
+  <script src="src/config/site.js"></script>
+  <script src="src/data/content.js"></script>
+  <script src="src/js/main.js"></script>
+</body>
+</html>
